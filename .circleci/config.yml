@@ -42,6 +42,11 @@ jobs:
           command: |
             apk add --update ansible
       - run:
+          name: check working directory and list its content
+          command: |
+            pwd
+            ls -la
+      - run:
           name: configure server
           command: |
             ansible-playbook -i inventory.txt main.yml
